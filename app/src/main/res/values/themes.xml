@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.GuideHelper" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="Theme.GuideHelper" parent="Base.Theme.GuideHelper" />
+</resources>

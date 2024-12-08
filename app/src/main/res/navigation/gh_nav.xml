@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gh_nav"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.guidehelper.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_as_guide"
+            app:destination="@id/eventListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventListFragment"
+        android:name="com.example.guidehelper.ui.EventListFragment"
+        android:label="fragment_event_list"
+        tools:layout="@layout/fragment_event_list" >
+        <action
+            android:id="@+id/action_eventListFragment_to_eventViewFragment"
+            app:destination="@id/eventViewFragment" />
+        <action
+            android:id="@+id/action_register_new_event"
+            app:destination="@id/registerEventFragment" />
+        <action
+            android:id="@+id/action_go_back"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventViewFragment"
+        android:name="com.example.guidehelper.ui.EventViewFragment"
+        android:label="fragment_event_view"
+        tools:layout="@layout/fragment_event_view" >
+        <action
+            android:id="@+id/action_eventViewFragment_to_eventListFragment"
+            app:destination="@id/eventListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerEventFragment"
+        android:name="com.example.guidehelper.ui.RegisterEventFragment"
+        android:label="fragment_register_event"
+        tools:layout="@layout/fragment_register_event" >
+        <action
+            android:id="@+id/action_go_back"
+            app:destination="@id/eventListFragment" />
+    </fragment>
+</navigation>

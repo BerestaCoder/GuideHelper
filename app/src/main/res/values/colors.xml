@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="editable_text">#888888</color>
+    <color name="container">#F1F1F1</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="special_text">#5B8A1F</color>
+    <color name="primary">#89CF2F</color>
+    <color name="secondary">#D7EFB9</color>
+</resources>

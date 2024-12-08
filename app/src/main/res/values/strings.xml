@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Guide Helper</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register_event">Зарегистрировать событие</string>
+    <string name="go_back">Вернуться обратно</string>
+    <string name="reload">Обновить</string>
+    <string name="event_name">Название события</string>
+    <string name="event_date">Дата события</string>
+    <string name="event_place">Место проведения</string>
+    <string name="event_info">Описание</string>
+    <string name="login_as_user">Войти, как обычный пользователь</string>
+    <string name="login_as_guide">Войти, как организатор</string>
+    <string name="welcome">Добро пожаловать!</string>
+</resources>
