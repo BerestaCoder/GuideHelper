@@ -53,6 +53,6 @@ dependencies {
     implementation(libs.androidx.navigation.fragment)
     implementation(libs.androidx.navigation.ui)
 
-    implementation(libs.androidx.room.runtime)
-    ksp(libs.androidx.room.compiler)
+    //implementation(libs.androidx.room.runtime)
+    //ksp(libs.androidx.room.compiler)
 }

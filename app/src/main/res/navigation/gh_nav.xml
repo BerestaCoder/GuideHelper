@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/gh_nav"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/signInFragment">
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.guidehelper.ui.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        android:id="@+id/signInFragment"
+        android:name="com.example.guidehelper.ui.fragments.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
         <action
-            android:id="@+id/action_login_as_guide"
+            android:id="@+id/action_signInFragment_to_eventListFragment"
             app:destination="@id/eventListFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventListFragment"
-        android:name="com.example.guidehelper.ui.EventListFragment"
+        android:name="com.example.guidehelper.ui.fragments.EventListFragment"
         android:label="fragment_event_list"
         tools:layout="@layout/fragment_event_list" >
         <action
@@ -26,11 +26,11 @@
             app:destination="@id/registerEventFragment" />
         <action
             android:id="@+id/action_go_back"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventViewFragment"
-        android:name="com.example.guidehelper.ui.EventViewFragment"
+        android:name="com.example.guidehelper.ui.fragments.EventViewFragment"
         android:label="fragment_event_view"
         tools:layout="@layout/fragment_event_view" >
         <action
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerEventFragment"
-        android:name="com.example.guidehelper.ui.RegisterEventFragment"
+        android:name="com.example.guidehelper.ui.fragments.RegisterEventFragment"
         android:label="fragment_register_event"
         tools:layout="@layout/fragment_register_event" >
         <action

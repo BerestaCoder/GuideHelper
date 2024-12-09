@@ -1,4 +1,4 @@
-package com.example.guidehelper.ui
+package com.example.guidehelper.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
