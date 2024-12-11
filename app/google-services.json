@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "413730069565",
+    "firebase_url": "https://guidehelper-27477-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "guidehelper-27477",
+    "storage_bucket": "guidehelper-27477.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413730069565:android:7de6e9b042758dac8b5e54",
+        "android_client_info": {
+          "package_name": "com.example.guidehelper"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRfGl9tGSLuj4st0460g8gENx_s1FVUws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

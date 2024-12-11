@@ -1,25 +1,25 @@
 package com.example.guidehelper.ui.fragments
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.guidehelper.R
-import com.example.guidehelper.databinding.FragmentSignInBinding
+import com.example.guidehelper.databinding.FragmentSignUpBinding
 
-class SignInFragment : Fragment() {
+class SignUpFragment : Fragment() {
 
     private lateinit var  navController: NavController
-    private lateinit var binding: FragmentSignInBinding
+    private lateinit var binding: FragmentSignUpBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSignInBinding.inflate(inflater, container, false)
+        binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,10 +34,10 @@ class SignInFragment : Fragment() {
     }
     private fun registerEvents() {
         binding.enter.setOnClickListener {
-            navController.navigate(R.id.action_signInFragment_to_eventListFragment)
+            navController.navigate(R.id.action_signUpFragment_to_eventListFragment)
         }
         binding.createAccount.setOnClickListener {
-            navController.navigate(R.id.action_signInFragment_to_signUpFragment)
+            navController.navigate(R.id.action_signUpFragment_to_signInFragment)
         }
     }
 }

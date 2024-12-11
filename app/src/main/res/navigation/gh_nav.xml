@@ -12,6 +12,21 @@
         <action
             android:id="@+id/action_signInFragment_to_eventListFragment"
             app:destination="@id/eventListFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.guidehelper.ui.fragments.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_eventListFragment"
+            app:destination="@id/eventListFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventListFragment"
@@ -24,26 +39,16 @@
         <action
             android:id="@+id/action_register_new_event"
             app:destination="@id/registerEventFragment" />
-        <action
-            android:id="@+id/action_go_back"
-            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/eventViewFragment"
         android:name="com.example.guidehelper.ui.fragments.EventViewFragment"
         android:label="fragment_event_view"
-        tools:layout="@layout/fragment_event_view" >
-        <action
-            android:id="@+id/action_eventViewFragment_to_eventListFragment"
-            app:destination="@id/eventListFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_event_view" />
     <fragment
         android:id="@+id/registerEventFragment"
         android:name="com.example.guidehelper.ui.fragments.RegisterEventFragment"
         android:label="fragment_register_event"
-        tools:layout="@layout/fragment_register_event" >
-        <action
-            android:id="@+id/action_go_back"
-            app:destination="@id/eventListFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_register_event" />
+
 </navigation>

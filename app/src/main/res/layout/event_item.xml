@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:padding="20dp"
     android:orientation="vertical"
-    android:background="@drawable/container">
+    android:background="@drawable/container"
+    android:layout_marginBottom="10dp">
     <TextView
         android:id="@+id/name_text_view"
         android:layout_width="wrap_content"

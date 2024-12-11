@@ -9,11 +9,14 @@
     <string name="event_date">Дата события</string>
     <string name="event_place">Место проведения</string>
     <string name="event_info">Описание</string>
-    <string name="login_as_user">Войти, как обычный пользователь</string>
-    <string name="login_as_guide">Войти, как организатор</string>
     <string name="welcome">Добро пожаловать!</string>
     <string name="email">Электронная почта</string>
     <string name="password">Пароль</string>
     <string name="sign_in">Войти</string>
     <string name="create_account">Создать аккаунт</string>
+    <string name="already_have_account">Уже есть аккаунт</string>
+    <string name="verify_password">Повторите пароль</string>
+    <string name="add_event">Добавить событие</string>
+    <string name="event_created">Событие создано!</string>
+    <string name="error_fill_text">Есть пустые строчки!</string>
 </resources>

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.SignInFragment">
+    tools:context=".ui.fragments.SignUpFragment">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -29,7 +29,7 @@
             android:id="@+id/email_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="emailAddress"
+            android:autofillHints=""
             android:inputType="textEmailAddress"
             android:hint="@string/email"
             android:background="@drawable/container"/>
@@ -40,9 +40,20 @@
             android:id="@+id/password_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="password"
+            android:autofillHints=""
             android:inputType="textPassword"
             android:hint="@string/password"
+            android:background="@drawable/container"/>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="10dp"/>
+        <EditText
+            android:id="@+id/verify_password_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:inputType="textPassword"
+            android:hint="@string/verify_password"
             android:background="@drawable/container"/>
         <Space
             android:layout_width="0dp"
@@ -52,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:background="@drawable/primary_rounded_button"
-            android:text="@string/sign_in"
+            android:text="@string/create_account"
             android:textSize="20sp"
             android:textColor="@color/white"/>
         <Space
@@ -64,7 +75,7 @@
             android:layout_height="40dp"
             android:gravity="center"
             android:background="@color/white"
-            android:text="@string/create_account"
+            android:text="@string/already_have_account"
             android:textColor="@color/special_text"
             android:textSize="20sp" />
 
