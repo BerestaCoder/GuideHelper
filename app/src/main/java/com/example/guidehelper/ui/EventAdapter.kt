@@ -7,26 +7,37 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.guidehelper.R
 import com.example.guidehelper.data.EventItem
+import com.example.guidehelper.databinding.EventItemBinding
 
-class EventAdapter(private val eventList:MutableList<EventItem>) : RecyclerView.Adapter<EventAdapter.ViewHolder>()  {
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val nameTextView: TextView
-        val dateTextView: TextView
-        init {
-            nameTextView = view.findViewById(R.id.name_text_view)
-            dateTextView = view.findViewById(R.id.date_text_view)
+class EventAdapter(private val eventList:MutableList<EventItem>) :
+    RecyclerView.Adapter<EventAdapter.ViewHolder>()  {
+
+    private var listener: EventAdapterClicksInterface? = null
+    fun setListener(listener: EventAdapterClicksInterface){
+        this.listener = listener
+    }
+    inner class ViewHolder(val binding: EventItemBinding) : RecyclerView.ViewHolder(binding.root)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val binding = EventItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
+    }
+    override fun getItemCount(): Int {
+        return eventList.size
+    }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        with(holder) {
+            with(eventList[position]) {
+                binding.nameTextView.text = this.name
+                binding.dateTextView.text = this.date
+                binding.view.setOnClickListener {
+                    listener?.onOpenEventClicked(this)
+                }
+
+            }
         }
     }
-    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.event_item, viewGroup, false)
-
-        return ViewHolder(view)
+    interface EventAdapterClicksInterface{
+        fun onOpenEventClicked(event: EventItem)
     }
-    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        viewHolder.nameTextView.text = eventList[position].name
-        viewHolder.dateTextView.text = eventList[position].date
-    }
-
-    override fun getItemCount() = eventList.size
 }

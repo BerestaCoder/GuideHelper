@@ -20,12 +20,13 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
-class EventListFragment : Fragment() {
+class EventListFragment : Fragment(), EventAdapter.EventAdapterClicksInterface {
 
-    private lateinit var navController: NavController
-    private lateinit var binding: FragmentEventListBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var databaseReference: DatabaseReference
+    private lateinit var navController: NavController
+    private lateinit var binding: FragmentEventListBinding
+    private lateinit var adapter: EventAdapter
     private lateinit var eventList: MutableList<EventItem>
 
     override fun onCreateView(
@@ -40,6 +41,7 @@ class EventListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         init(view)
+        fetchData()
         registerEvents()
     }
 
@@ -49,12 +51,15 @@ class EventListFragment : Fragment() {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("events")
 
         eventList = mutableListOf()
-        fetchData()
 
         binding.eventList.apply {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this.context)
         }
+        eventList = mutableListOf()
+        adapter = EventAdapter(eventList)
+        adapter.setListener(this)
+        binding.eventList.adapter = adapter
     }
 
     private fun fetchData() {
@@ -64,11 +69,12 @@ class EventListFragment : Fragment() {
                 if(snapshot.exists()){
                     for (eventSnapshot in snapshot.children){
                         val eventItem = eventSnapshot.getValue(EventItem::class.java)
-                        eventList.add(eventItem!!)
+                        if (eventItem != null) {
+                            eventList.add(eventItem)
+                        }
                     }
                 }
-                val rvAdapter = EventAdapter(eventList)
-                binding.eventList.adapter = rvAdapter
+                adapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -85,5 +91,14 @@ class EventListFragment : Fragment() {
             auth.signOut()
             navController.popBackStack()
         }
+    }
+    override fun onOpenEventClicked(event: EventItem) {
+        //Toast.makeText(context, event.name, Toast.LENGTH_SHORT).show()
+        val bundle = Bundle()
+        bundle.putString("name", event.name)
+        bundle.putString("date", event.date)
+        bundle.putString("place", event.place)
+        bundle.putString("info", event.info)
+        navController.navigate(R.id.action_eventListFragment_to_eventViewFragment, bundle)
     }
 }
