@@ -13,6 +13,7 @@ import com.example.guidehelper.R
 import com.example.guidehelper.data.EventItem
 import com.example.guidehelper.databinding.FragmentEventListBinding
 import com.example.guidehelper.ui.EventAdapter
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -21,8 +22,9 @@ import com.google.firebase.database.ValueEventListener
 
 class EventListFragment : Fragment() {
 
-    private lateinit var  navController: NavController
+    private lateinit var navController: NavController
     private lateinit var binding: FragmentEventListBinding
+    private lateinit var auth: FirebaseAuth
     private lateinit var databaseReference: DatabaseReference
     private lateinit var eventList: MutableList<EventItem>
 
@@ -43,6 +45,7 @@ class EventListFragment : Fragment() {
 
     private fun init(view: View) {
         navController = Navigation.findNavController(view)
+        auth = FirebaseAuth.getInstance()
         databaseReference = FirebaseDatabase.getInstance().getReference().child("events")
 
         eventList = mutableListOf()
@@ -79,6 +82,7 @@ class EventListFragment : Fragment() {
             navController.navigate(R.id.action_register_new_event)
         }
         binding.backButton.setOnClickListener {
+            auth.signOut()
             navController.popBackStack()
         }
     }

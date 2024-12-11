@@ -19,4 +19,8 @@
     <string name="add_event">Добавить событие</string>
     <string name="event_created">Событие создано!</string>
     <string name="error_fill_text">Есть пустые строчки!</string>
+    <string name="account_enter_successful">Вход в аккаунт прошёл успешно!</string>
+    <string name="loading">Идёт загрузка...</string>
+    <string name="account_created">Аккаунт зарегистрирован!</string>
+    <string name="passwords_dont_match">Пароли не совпадают</string>
 </resources>
